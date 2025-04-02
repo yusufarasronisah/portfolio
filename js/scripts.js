@@ -16,16 +16,34 @@ document.querySelectorAll(".filter-portfolio").forEach(container => {
         if (event.target.tagName === "BUTTON") { 
             let targetId = event.target.getAttribute("data-target");
             let contentElement = document.getElementById(targetId);
+            
+            let activeElementsFirst = document.querySelectorAll(".active")
+            activeElementsFirst.forEach(element => element.classList.remove("active"));
 
-            // Sembunyikan semua elemen dengan class "content"
             document.querySelectorAll(".content").forEach(el => {
                 setTimeout(() => el.classList.remove("show"), 200);
             });
 
-            // Tampilkan elemen yang dipilih
             if (contentElement) {
                 setTimeout(() => contentElement.classList.add("show"), 200);
             }
         }
     });
+});
+
+
+//scroll menu
+window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+        navbar.style.background = "#242424"; 
+        navbar.style.top = 0;
+        navbar.style.height = "4rem";
+        navbar.style.borderBottom = "1px solid rgba(202, 88, 0, 0.44)";
+    } else {
+        navbar.style.top = "1.5rem";
+        navbar.style.background = "transparent";
+        navbar.style.height = "2.6875rem";
+        navbar.style.borderBottom = "none";
+    }
 });

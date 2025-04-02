@@ -4,6 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Yusuf Aras Robnisah - Web Developer">
+    <meta property="og:description"
+        content="A professional Web Developer specializing in modern, responsive, and high-performance websites.">
+    <meta property="og:image" content="assets/photo-profile.png">
+    <meta property="og:url"
+        content="https://portfolio-git-master-yusuf-aras-projects.vercel.app/assets/photo-profile.png">
+    <meta property="og:type" content="website">
+    <meta name="description"
+        content="Yusuf Aras Robnisah is a Web Developer with expertise in frontend and backend development using HTML, CSS, JavaScript, Next.js, Vue.js, React, Node.js, and Django. Passionate about building scalable and user-friendly web applications.">
     <title>Yusuf Aras Ronisah</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -143,23 +153,28 @@
                     <p class="portfolio-sub-title">Here are some of my recent work</p>
                     <div class="portfolio-list">
                         <div class="filter-portfolio">
-                            <button class="btn-cta" data-target="all">All</button>
+                            <button class="btn-cta active" data-target="all">All</button>
                             <button class="btn-cta" data-target="company">Company Profile</button>
                             <button class="btn-cta" data-target="ecommerce">E-commerce</button>
                             <button class="btn-cta" data-target="office">Office Application</button>
                             <button class="btn-cta" data-target="etl">(ETL) Extract, Transform, Load</button>
                         </div>
-                        <div id="all"  class="content show">
+                        <div id="all" class="content show">
                             <p>Here are all the categories of project lists I have worked on.</p>
                             <div class="item">
                                 <div class="item-detail">
-                                    <img src="assets/wirausaha-hijau-summary.png" alt="Website Wirausaha Hijau of Angin Investment">
+                                    <img src="assets/wirausaha-hijau-summary.png"
+                                        alt="Website Wirausaha Hijau of Angin Investment">
                                 </div>
                                 <div class="item-detail">
-                                    <img src="assets/dprd-banggai-summary.png" alt="Portfolio 1">
+                                    <img src="assets/dprd-banggai-summary.png" alt="Website Dprd Banggai">
                                 </div>
                                 <div class="item-detail">
-                                    <img src="assets/nl-id-acc-summary.png" alt="Portfolio 1">
+                                    <img src="assets/nl-id-acc-summary.png" alt="Website Nl Id Access">
+                                </div>
+                                <div class="item-detail">
+                                    <img src="assets/p&g-solve-summary.png"
+                                        alt="Website P & G Solve Challanges Indonesia">
                                 </div>
                             </div>
                         </div>
@@ -178,8 +193,48 @@
                     </div>
                 </div>
             </section>
+            <section class="contact" id="contact">
+                <div class="contact-content">
+                    <h1 class="contact-title">Contact Me</h1>
+                    <p class="contact-sub-title">I’d love to hear from you! Feel free to reach out for any inquiries, collaborations, or support.</p>
+                    <div class="contact-list">
+                        <div class="contact-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:yusufarasronisah@gmail.com">yusufarasronisah@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <a href="https://wa.me/6281317143961" target="_blank">+6281317143961</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-brands fa-instagram"></i>
+                            <a href="https://www.instagram.com/araslt" target="_blank">araslt</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <a href="https://www.linkedin.com/in/yusuf-aras-ronisah" target="_blank">Yusuf Aras Ronisah</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
+        <div class="top-scroll menu">
+           <a href="#home"><i class="fa-solid fa-arrow-up"></i></a>
+        </div>
     </div>
+    <footer>
+        <div class="footer-menu">
+            <ul class="menu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About me</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact me</a></li>
+            </ul>
+            <hr>
+            <p>Created by Yusuf Aras Ronisah</p>
+        </div>
+    </footer>
 </body>
 <script src="js/scripts.js"></script>
 

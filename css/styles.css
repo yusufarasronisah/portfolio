@@ -6,13 +6,13 @@
 
 body {
     background-color: #121212;
+    font-family: 'Lato', sans-serif;
 }
 
 .container {
     padding-top: 2rem;
-    font-family: 'Lato', sans-serif;
     margin: auto;
-    width: 78rem;
+    max-width: 78rem;
 }
 
 header .navbar {
@@ -22,6 +22,11 @@ header .navbar {
     align-items: center;
     padding: 0 4rem;
     height: 2.6875rem;
+    position: fixed; 
+    top: 10; 
+    left: 0;
+    z-index: 1000;
+    width: 100%;
 }
 
 header .navbar .brand {
@@ -78,7 +83,7 @@ header .navbar .menu a.active {
     cursor: pointer;
 }
 
-.btn-cta:focus {
+.btn-cta:focus, .btn-cta.active {
     background: transparent;
     border: 1px solid #959595;
     color: #959595;
@@ -98,6 +103,7 @@ header .navbar .menu a.active {
     color: #707070;
     font-size: 24px;
     font-weight: 700;
+    animation: breath 2s ease-in-out forwards;
 }
 
 .hero .hero-content .hero-sub-title {
@@ -105,6 +111,8 @@ header .navbar .menu a.active {
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 1rem;
+    animation: breath 2s ease-in-out forwards;
+    animation-delay: 2s;
 }
 
 .hero .hero-content .hero-job-title {
@@ -115,6 +123,8 @@ header .navbar .menu a.active {
     -webkit-text-fill-color: transparent;
     max-width: 32.375rem;
     margin-bottom: 1rem;
+    animation: breath 2s ease-in-out forwards;
+    animation-delay: 4s;
 }
 
 .social-media {
@@ -123,6 +133,8 @@ header .navbar .menu a.active {
     width: 13.75rem;
     height: 3.5rem;
     gap: 1rem;
+    animation: breath 2s ease-in-out forwards;
+    animation-delay: 6s;
 }
 
 .social-media li {
@@ -148,6 +160,8 @@ header .navbar .menu a.active {
     gap: 1rem;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
+    animation: breath 2s ease-in-out forwards;
+    animation-delay: 8s;
 }
 
 .hero-content .hero-card {
@@ -168,6 +182,8 @@ header .navbar .menu a.active {
     justify-content: center;
     align-items: start;
     gap: 0.5rem;
+    animation: breath 2s ease-in-out forwards;
+    animation-delay: 10s;
 }
 
 .hero-content .hero-card .hero-card-item p:first-child {
@@ -197,7 +213,7 @@ header .navbar .menu a.active {
     clip-path: circle(50%);
 }
 
-.services,.about, .portfolio {
+.services,.about, .portfolio, .contact {
     padding: 4rem 4rem 0 4rem;
     display: flex;
     flex-direction: column;
@@ -208,14 +224,15 @@ header .navbar .menu a.active {
     text-align: center;
 }
 
-.services-title,.about-title,.portfolio-title {
+.services-title,.about-title,.portfolio-title, .contact-title {
     color: #FEFEFE;
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
 }
 
-.services-sub-title, .about-sub-title, .portfolio-sub-title {
+.services-sub-title, .about-sub-title, .portfolio-sub-title,
+.contact-sub-title {
     color: #959595;
     font-size: 1.25rem;
     margin-bottom: 3rem;
@@ -262,7 +279,6 @@ header .navbar .menu a.active {
     display: flex;
     flex-direction: row;
     max-height: 27rem;
-    gap: 2rem;
 }
 
 .about .profile .img-profile{
@@ -270,8 +286,8 @@ header .navbar .menu a.active {
 }
 
 .about .profile .img-profile img{    
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     object-fit: cover;
     filter: grayscale(70%);
 }
@@ -346,11 +362,129 @@ header .navbar .menu a.active {
     color: #959595;
     font-size: 1rem;
     text-transform: uppercase;
-    height: 15rem;
+    height: 18rem;
 }
 
 .portfolio-list .content .item .item-detail img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+.contact{
+    height: 80vh;
+}
+.contact-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    max-width: 33rem;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.contact-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #57575742;
+    border: 1px solid #959595;
+    border-radius: 1%;
+    cursor: pointer;
+    min-width: 21rem;
+    flex: 1;
+    color: #959595;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.contact-item a{
+    color: #FD6F00;
+    font-size: 1rem;
+    text-decoration: none;
+    text-transform: lowercase;
+}
+
+.footer-menu{
+    background-color: #57575742;
+    padding: 1rem 4rem;
+    margin: auto;
+}
+
+.footer-menu ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.footer-menu ul li{
+    list-style-type: none;
+}
+
+.footer-menu ul li a{
+    color: #959595;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.footer-menu p{
+    color: #959595;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-menu ul li a:hover, .footer-menu ul li a:active{
+    color: #FD6F00;
+}
+
+.top-scroll{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FD6F00;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-scroll a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+@keyframes breath {
+    0% {
+        opacity: 0.3;
+        transform: scale(0.97); /* Sedikit lebih kecil dari normal */
+    }
+    30% {
+        opacity: 1;
+        transform: scale(1.02); /* Sedikit lebih besar dari ukuran normal */
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(0.98); /* Sedikit mengecil */
+    }
+    70% {
+        opacity: 1;
+        transform: scale(1.02); /* Sedikit lebih besar, tapi masih halus */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* Kembali ke ukuran normal */
+    }
 }
