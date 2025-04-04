@@ -466,6 +466,10 @@ header .navbar .menu a.active {
     font-size: 1rem;
 }
 
+.hamburger{
+    display: none;
+}
+
 @keyframes breath {
     0% {
         opacity: 0.3;
@@ -486,5 +490,128 @@ header .navbar .menu a.active {
     100% {
         opacity: 1;
         transform: scale(1); /* Kembali ke ukuran normal */
+    }
+}
+
+/* Media Query */
+@media screen and (max-width: 768px) {
+    *{
+        font-size: 60%;
+    }
+
+    header .navbar{
+        justify-content: space-between;
+    }
+
+    .hamburger{
+        display: block;
+        flex: 1.7;
+    }
+
+    .hamburger button{
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 1rem 1rem;
+    }
+
+    .hamburger button i{
+        font-size: 1.5rem;
+        color: #959595;
+    }
+
+    header .navbar .brand{
+        flex:1;
+        text-align: center;
+    }
+
+    header .navbar .menu {
+        display: none;
+        
+    }
+
+    header .navbar .menu-hire {
+        flex:2;
+        text-align: right;
+    }
+
+    header .navbar .menu.active{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 4rem;
+        background-color: #575757e4;
+        top: 4rem;
+        width: 20rem;
+        align-items: start;
+        padding: 1rem;
+    }
+
+    header .navbar .menu.active a{
+        font-size: 1.5rem;
+    }
+
+    .hero{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero .hero-content .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero .hero-content .hero-sub-title {
+        font-size: 2.5rem;
+    }
+
+    .hero .hero-content .hero-job-title {
+        font-size: 4.5rem;
+    }
+
+    .hero .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero .hero-content .social-media {
+        justify-content: center;
+        align-items: center;
+        width: 15.75rem;
+        height: 3.5rem;
+    }
+
+    .hero .hero-content .social-media a{
+        font-size: 3rem;
+        line-height: 1rem;
+    }
+
+    .hero .hero-content .social-media li{
+        height: 3rem;
+        width: 3rem;
+    }
+
+    .btn-cta {
+        border-radius: 0.5rem;
+    }
+
+    .hero .hero-content .hero-card {
+        margin-top:2rem;
+        margin-bottom:4rem;
+    }
+
+    .services,.about, .portfolio, .contact {
+        padding: 0 4rem;
+        min-height:100vh;
+    }
+    
+    .services .services-item {
+        min-width: 11rem;
+        width: 11rem;
+        flex: 1 1 11rem;
     }
 }

@@ -47,3 +47,36 @@ window.addEventListener("scroll", function () {
         navbar.style.borderBottom = "none";
     }
 });
+
+//menu reponsive
+document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.getElementById("menu-btn");
+    const menu = document.getElementById("menu-mobile");
+    const icon = menuBtn.querySelector("i");
+
+    menuBtn.addEventListener("click", function () {
+        menu.classList.toggle("active");
+
+        if (menu.classList.contains("active")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times"); // Icon Close
+        } else {
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars"); // Icon Burger
+        }
+    });
+
+    document.addEventListener("click", function (event) {
+        if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
+            menu.classList.remove("active");
+           
+            if (menu.classList.contains("active")) {
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-times"); // Icon Close
+            } else {
+                icon.classList.remove("fa-times");
+                icon.classList.add("fa-bars"); // Icon Burger
+            }
+        }
+    });
+});
