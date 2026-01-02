@@ -14,4 +14,4 @@ const observer = new IntersectionObserver(entries => {
 
 setTimeout(() => {
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el))
-}, 300)
+}, 1300)
