@@ -21,7 +21,7 @@
             <div class="mb-8 flex justify-between items-start">
               <div class="space-y-1">
                 <h4 class="text-2xl font-bold text-white group-hover:text-indigo-400 transition-colors tracking-tight">
-                  Product Lifecycle Management
+                  Product Lifecycle Management PT Bina Busana Internusa
                 </h4>
                 <div class="h-1 w-0 group-hover:w-full bg-indigo-500 transition-all duration-500"></div>
               </div>
@@ -44,7 +44,7 @@
             <div class="mb-8 flex justify-between items-start">
               <div class="space-y-1">
                 <h4 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors tracking-tight">
-                  B2B Marketplace Ecosystem
+                  B2B Marketplace Ecosystem - PT Indonesian Supplies
                 </h4>
                 <div class="h-1 w-0 group-hover:w-full bg-emerald-500 transition-all duration-500"></div>
               </div>
@@ -66,7 +66,7 @@
             <div class="mb-8 flex justify-between items-start">
               <div class="space-y-1">
                 <h4 class="text-2xl font-bold text-white group-hover:text-orange-400 transition-colors tracking-tight">
-                  Report Management System
+                  Report Management System PT Bina Busana Internusa
                 </h4>
                 <div class="h-1 w-0 group-hover:w-full bg-orange-500 transition-all duration-500"></div>
               </div>
@@ -88,7 +88,7 @@
             <div class="mb-8 flex justify-between items-start">
               <div class="space-y-1">
                 <h4 class="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors tracking-tight">
-                  ETL Data Warehouse
+                  ETL Data Warehouse - PT Bina Busana Internusa
                 </h4>
                 <div class="h-1 w-0 group-hover:w-full bg-blue-500 transition-all duration-500"></div>
               </div>
