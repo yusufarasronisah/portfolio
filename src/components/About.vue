@@ -27,11 +27,11 @@
           <ul class="text-zinc-300 space-y-4 text-base">
             <li class="flex items-start gap-3">
               <span class="text-indigo-500 mt-1">▹</span>
-              <span>Scalable backend systems <span class="text-zinc-500 text-sm">(Django, Postgres)</span></span>
+              <span>Scalable backend systems <span class="text-zinc-500 text-sm">(Django, Postgres, Express, Nodejs)</span></span>
             </li>
             <li class="flex items-start gap-3">
               <span class="text-indigo-500 mt-1">▹</span>
-              <span>Frontend architecture <span class="text-zinc-500 text-sm">(Vue, Tailwind)</span></span>
+              <span>Frontend architecture <span class="text-zinc-500 text-sm">(Vue, React, Tailwind)</span></span>
             </li>
             <li class="flex items-start gap-3">
               <span class="text-indigo-500 mt-1">▹</span>

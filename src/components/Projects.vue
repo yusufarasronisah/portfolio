@@ -21,7 +21,10 @@
             <div class="mb-8 flex justify-between items-start">
               <div class="space-y-1">
                 <h4 class="text-2xl font-bold text-white group-hover:text-indigo-400 transition-colors tracking-tight">
-                  Product Lifecycle Management - PT Bina Busana Internusa
+                 PT Bina Busana Internusa
+                </h4>
+                <h4 class="text-2xl font-bold text-white group-hover:text-indigo-400 transition-colors tracking-tight">
+                  Product Lifecycle Management
                 </h4>
                 <div class="h-1 w-0 group-hover:w-full bg-indigo-500 transition-all duration-500"></div>
               </div>
@@ -44,7 +47,10 @@
             <div class="mb-8 flex justify-between items-start">
               <div class="space-y-1">
                 <h4 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors tracking-tight">
-                  B2B Marketplace Ecosystem - PT Indonesian Supplies
+                  PT Indonesian Supplies
+                </h4>
+                <h4 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors tracking-tight">
+                  B2B Marketplace Ecosystem
                 </h4>
                 <div class="h-1 w-0 group-hover:w-full bg-emerald-500 transition-all duration-500"></div>
               </div>
@@ -54,6 +60,7 @@
               Architected a complex B2B platform integrating WooCommerce and WCFM. Engineered custom plugins for membership systems and booking engines, managing self-hosted Apache server infrastructure.
             </p>
             <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="text-[11px] font-bold text-zinc-400 bg-zinc-950 px-3 py-1.5 rounded-md border border-zinc-800 group-hover:border-zinc-700 transition-colors">WordPress</span>
               <span class="text-[11px] font-bold text-zinc-400 bg-zinc-950 px-3 py-1.5 rounded-md border border-zinc-800 group-hover:border-zinc-700 transition-colors">WooCommerce</span>
               <span class="text-[11px] font-bold text-zinc-400 bg-zinc-950 px-3 py-1.5 rounded-md border border-zinc-800 group-hover:border-zinc-700 transition-colors">PHP</span>
               <span class="text-[11px] font-bold text-zinc-400 bg-zinc-950 px-3 py-1.5 rounded-md border border-zinc-800 group-hover:border-zinc-700 transition-colors">Apache</span>
@@ -65,8 +72,11 @@
           <div class="relative h-full flex flex-col">
             <div class="mb-8 flex justify-between items-start">
               <div class="space-y-1">
+                <h4 class="text-2xl font-bold text-white group-hover:text-indigo-400 transition-colors tracking-tight">
+                 PT Bina Busana Internusa
+                </h4>
                 <h4 class="text-2xl font-bold text-white group-hover:text-orange-400 transition-colors tracking-tight">
-                  Report Management System - PT Bina Busana Internusa
+                  Report Management System
                 </h4>
                 <div class="h-1 w-0 group-hover:w-full bg-orange-500 transition-all duration-500"></div>
               </div>
@@ -87,8 +97,11 @@
           <div class="relative h-full flex flex-col">
             <div class="mb-8 flex justify-between items-start">
               <div class="space-y-1">
+                <h4 class="text-2xl font-bold text-white group-hover:text-indigo-400 transition-colors tracking-tight">
+                 PT Bina Busana Internusa
+                </h4>
                 <h4 class="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors tracking-tight">
-                  ETL Data Warehouse - PT Bina Busana Internusa
+                  ETL Data Warehouse 
                 </h4>
                 <div class="h-1 w-0 group-hover:w-full bg-blue-500 transition-all duration-500"></div>
               </div>
@@ -108,8 +121,11 @@
           <div class="relative h-full flex flex-col">
             <div class="mb-8 flex justify-between items-start">
               <div class="space-y-1">
+                <h4 class="text-2xl font-bold text-white group-hover:text-indigo-400 transition-colors tracking-tight">
+                 Telusur.co.id
+                </h4>
                 <h4 class="text-2xl font-bold text-white group-hover:text-red-400 transition-colors tracking-tight">
-                  Digital News Portal - Telusur.co.id
+                  Digital News Portal
                 </h4>
                 <div class="h-1 w-0 group-hover:w-full bg-red-500 transition-all duration-500"></div>
               </div>
