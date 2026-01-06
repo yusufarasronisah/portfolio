@@ -2,6 +2,7 @@
 import { ref, computed, onMounted, onUnmounted } from "vue";
 import koiImg from "@/assets/koi.png"; 
 
+// --- LOGIKA ANIMASI IKAN KOI ---
 const mouseX = ref(0);
 const mouseY = ref(0);
 const fishX = ref(0);
@@ -10,7 +11,6 @@ const rotation = ref(0);
 const swimPhase = ref(0);
 let rafId = null;
 
-// Mengambil posisi mouse global layar agar sinkron dengan fixed position ikan
 function onMouseMove(e) {
   mouseX.value = e.clientX;
   mouseY.value = e.clientY;
@@ -20,9 +20,6 @@ function animate() {
   const dx = mouseX.value - fishX.value;
   const dy = mouseY.value - fishY.value;
   
-  // LOGIKA: Jarak nempel & jalan slow
-  // Ikan akan terus bergerak selama jaraknya > 0.1px (pasti nempel)
-  // 0.03 membuat jalannya sangat santai/slow
   fishX.value += dx * 0.03;
   fishY.value += dy * 0.03;
 
@@ -31,7 +28,6 @@ function animate() {
   while (diff < -180) diff += 360;
   while (diff > 180) diff -= 360;
 
-  // Rotasi hanya aktif jika ikan bergerak agar tidak bergetar
   if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
     rotation.value += diff * 0.05;
   }
@@ -41,21 +37,30 @@ function animate() {
 }
 
 const koiStyle = computed(() => ({
-  position: 'fixed', // Fixed agar koordinatnya sama persis dengan kursor di layar
+  position: 'fixed',
   left: 0,
   top: 0,
   transform: `translate3d(${fishX.value}px, ${fishY.value}px, 0) translate(-50%, -50%) rotate(${rotation.value + Math.sin(swimPhase.value) * 5}deg)`,
-  zIndex: 9999, // Di atas segalanya
+  zIndex: 9999,
   pointerEvents: 'none',
   transition: 'none'
 }));
 
+// --- LIFECYCLE ---
 onMounted(() => {
-  // Set posisi awal ikan ke tengah kursor saat pertama gerak
   fishX.value = window.innerWidth / 2;
   fishY.value = window.innerHeight / 2;
   window.addEventListener("mousemove", onMouseMove);
   animate();
+
+  // Load TikTok Script secara dinamis
+  if (!document.getElementById('tiktok-script')) {
+    const script = document.createElement('script');
+    script.id = 'tiktok-script';
+    script.src = "https://www.tiktok.com/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }
 });
 
 onUnmounted(() => {
@@ -65,48 +70,56 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section class="relative min-h-screen bg-zinc-950 text-white overflow-hidden flex items-center justify-center py-20">
+  <section class="relative min-h-screen bg-zinc-950 text-white overflow-hidden flex items-center justify-center py-10">
     <img :src="koiImg" :style="koiStyle" class="w-24 md:w-32 opacity-80" />
 
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(99,102,241,0.1),transparent)] pointer-events-none"></div>
 
     <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-16 w-full">
-      <div class="flex flex-col lg:flex-row items-center justify-between gap-16">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
         
         <div class="flex-1 space-y-8 reveal">
-          <h1 class="text-6xl md:text-7xl font-black tracking-tighter leading-[1.1]">
+          <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-[1.1]">
             Building <br />
             <span class="custom-gradient-text">Scalable</span> <br />
             <span class="custom-gradient-text">Web Systems</span>
           </h1>
 
           <p class="text-zinc-400 text-lg max-w-md leading-relaxed">
-            Fullstack Developer specializing in <span class="text-white italic underline decoration-indigo-500">high-performance systems and scalable end-to-end solutions.</span>
+            Fullstack Developer specializing in <span class="text-white italic underline decoration-indigo-500 font-medium">high-performance systems and scalable end-to-end solutions.</span>
           </p>
 
           <div class="flex gap-4">
-            <a 
-              href="https://drive.google.com/file/d/1k-JimgbKFya1OKinZneYjXt1rd0R3Ik8/view?usp=sharing" target="_blank" class="px-8 py-4 bg-indigo-600 rounded-2xl font-bold hover:bg-indigo-700 transition-all">Donwload CV</a>
-            <a 
-              href="#contact" 
-              class="inline-block px-8 py-4 bg-zinc-900 border border-zinc-800 rounded-2xl font-bold text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all duration-300"
-            >
+            <a href="https://drive.google.com/file/d/1k-JimgbKFya1OKinZneYjXt1rd0R3Ik8/view?usp=sharing" target="_blank" class="px-8 py-4 bg-indigo-600 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-500/20">
+              Download CV
+            </a>
+            <a href="#contact" class="px-8 py-4 bg-zinc-900 border border-zinc-800 rounded-2xl font-bold text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all duration-300">
               Contact Me
             </a>
           </div>
         </div>
 
-        <div class="reveal delay-300">
-          <div class="relative w-[300px] aspect-[9/16] bg-zinc-900 rounded-[3rem] p-3 border border-zinc-800 shadow-2xl">
-            <div class="w-full h-full rounded-[2.2rem] overflow-hidden bg-black">
-              <iframe
-                src="https://www.tiktok.com/@yusuf.aras156?_r=1&_t=ZS-92jKktLQvvr"
-                class="w-full h-full"
-                frameborder="0"
-                allow="autoplay; encrypted-media"
-              ></iframe>
+        <div class="reveal delay-300 mt-15">
+          <div class="relative w-[300px] h-[480px] bg-zinc-900 rounded-[2.5rem] p-2 border border-zinc-800 shadow-2xl flex flex-col">
+            
+            <div class="flex-1 rounded-[2rem] overflow-hidden bg-white relative flex flex-col">
+              
+              <div class="w-full h-full tiktok-wrapper">
+                <blockquote 
+                  class="tiktok-embed" 
+                  cite="https://www.tiktok.com/@yusuf.aras156" 
+                  data-unique-id="yusuf.aras156" 
+                  data-embed-type="creator"
+                >
+                  <section>
+                    <a target="_blank" href="https://www.tiktok.com/@yusuf.aras156">@yusuf.aras156</a>
+                  </section>
+                </blockquote>
+              </div>
+
             </div>
-            <div class="absolute top-6 left-1/2 -translate-x-1/2 w-16 h-4 bg-zinc-950 rounded-full border border-zinc-800"></div>
+
+            <div class="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-4 bg-black rounded-full border border-zinc-800 z-20"></div>
           </div>
         </div>
 
@@ -126,7 +139,7 @@ onUnmounted(() => {
 
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(20px);
   animation: fadeInUp 0.8s ease forwards;
 }
 
@@ -134,5 +147,36 @@ onUnmounted(() => {
 
 @keyframes fadeInUp {
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- TIKTOK FULL HEIGHT FIX --- */
+
+.tiktok-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Menghilangkan scrollbar pada wrapper jika ada */
+.tiktok-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* Menggunakan :deep untuk menjangkau iframe yang dibuat script TikTok */
+:deep(.tiktok-embed) {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  height: 100% !important; /* Paksa blockquote jadi full */
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+:deep(.tiktok-embed iframe) {
+  flex: 1 !important; /* Paksa iframe mengambil seluruh ruang sisa di bawah profile */
+  height: 100% !important;
+  width: 100% !important;
 }
 </style>
